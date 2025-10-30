@@ -10,23 +10,34 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mockup 4: Card Responsiva'),
-        backgroundColor: Colors.blue.shade700,
-        foregroundColor: Colors.white,
+        title: const Text('Mockup 4: Card Responsiva'), //
+        // --- TUS ESTILOS ORIGINALES REINTEGRADOS ---
+        backgroundColor: Colors.blue.shade700, //
+        foregroundColor: Colors.white, //
+        // --- TUS ACCIONES (ORIGINAL + ADAPTACIÓN) ---
         actions: [
           IconButton(
-            icon: const Icon(Icons.palette_outlined),
+            icon: const Icon(Icons.palette_outlined), //
             tooltip: 'Ver Colores',
             onPressed: () {
-              //CONTEXT!!
-              context.goNamed(AppRoutes.color);
+              context.goNamed(AppRoutes.color); //
+            },
+          ),
+          // --- NUEVO BOTÓN LOGOUT ---
+          IconButton(
+            icon: const Icon(Icons.logout),
+            tooltip: 'Cerrar Sesión',
+            onPressed: () {
+              // Regresa al login
+              context.goNamed(AppRoutes.login);
             },
           ),
         ],
       ),
-      backgroundColor: Colors.grey[200],
+      // --- TU BODY ORIGINAL REINTEGRADO ---
+      backgroundColor: Colors.grey[200], //
       body: const Center(
-        child: CustomResponsiveCard(),
+        child: CustomResponsiveCard(), //
       ),
     );
   }
